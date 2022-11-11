@@ -17,7 +17,10 @@ function App() {
               Rent a <span className={styles.special__text}>Place</span> away from <span className={styles.special__text}>Home</span> in the <span className={styles.special__text}>Metaverse</span>
             </div>
             <p className={styles.hero__paragraph}>we provide you access to luxury and affordable houses in the metaverse, get a chance to turn your imagination to reality at your comfort zone</p>
-            <span className={styles.search__container}></span>
+            <span className={styles.search__container}>
+              <input type="text" placeholder='Search for location' className={styles.search__input}/>
+              <button className={styles.search__button}>Search</button>
+            </span>
           </div>
           <div className={styles.hero__right}>
             <div className={styles.hero__masonry}>
