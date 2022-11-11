@@ -1,0 +1,177 @@
+@import './colors.scss';
+
+.navbar {
+    width: 100%;
+    padding: 4.3rem 10em;
+    display: flex;
+    align-items: center;
+    color: black;
+    background-color: white;
+
+    .scalable__nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .main__nav {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            margin-right: auto;
+            font-size: 2em;
+            gap: clamp(20px, 3vw, 48px);
+
+            .main__nav__item {
+                height: 100%;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+
+        .wallet__button__container {
+            button {
+                border: none;
+                background-color: $primary-major;
+                color: white;
+                border-radius: 1rem;
+                padding: 1.5rem 2.6rem;
+                width: max-content;
+                font-size: 1.6em;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .mobile__menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .navbar {
+        max-height: 90px;
+        padding: 4.3rem 2rem;
+        background-color: white;
+        .brand__container {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scalable__nav {
+            display: none;
+        }
+
+        .mobile__menu {
+            display: flex;
+
+            input {
+                opacity: 0;
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:checked~.line1 {
+                    transform: translateX(0.4em) rotate(45deg);
+                }
+
+
+                &:checked~.line2 {
+                    opacity: 0;
+                }
+
+                &:checked~.line3 {
+                    transform: translateX(0.4em) rotate(-45deg);
+                }
+
+                &:checked~.scalable__nav {
+                    height: 100%;
+                    padding: 3em 0;
+                    border-bottom: 1px solid grey;
+                }
+            }
+
+            .burger__menu {
+                position: relative;
+                background-color: $primary-major;
+                padding: 1em 1em;
+                width: min-content;
+                border-radius: 1em;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75em;
+
+                span {
+                    background-color: white;
+                    width: 3em;
+                    height: 0.3em;
+                    border-radius: 3em;
+                    transition: transform 0.2s ease-in-out;
+                }
+
+                .line1 {
+                    transform-origin: 0% 50%;
+                }
+
+                .line2 {
+                    transition: opacity 0.2s ease-in-out;
+                }
+
+                .line3 {
+                    transform-origin: 0% 50%;
+                }
+
+                .scalable__nav {
+                    display: flex;
+                    flex-direction: column;
+                    position: fixed;
+                    top: 90px;
+                    left: 0;
+                    z-index: 2;
+                    height: 0;
+                    padding: 0em 0em;
+                    background-color: white;
+                    border-bottom: 0px solid grey;
+                    overflow: hidden;
+                    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+
+                    .main__nav {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        height: max-content;
+                        align-items: center;
+                        margin-bottom: none;
+                        gap: 1.5em;
+                        
+                        
+                        .main__nav__item {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            text-align: center;
+                            height: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
