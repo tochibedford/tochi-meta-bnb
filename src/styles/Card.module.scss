@@ -1,0 +1,23 @@
+.card {
+    border: 1px solid #D7D7D7;
+    background: white;
+    padding: 1.6em;
+    border-radius: 1.5em;
+    display: grid;
+    place-items: center;
+
+    .card__image__container {
+        border-radius: 1.5em;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        // width: 260px;
+        // height: 265px;
+        img {
+            border-radius: 1.5em;
+            object-fit: contain;
+            width: 110%;
+        }
+    }
+}

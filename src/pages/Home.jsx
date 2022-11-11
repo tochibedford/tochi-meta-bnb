@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.scss'
 import partner1 from '../assets/partner_mbtoken.svg'
 import partner2 from '../assets/partner_metamask.svg'
 import partner3 from '../assets/partner_opensea.svg'
+import Card from "../components/Card";
 
 const Home = () => {
     return ( 
@@ -22,7 +23,16 @@ const Home = () => {
             </span>
             <main className={styles.main__content}>
                 <h2 className={styles.inspiration__title}>Inspiration for your next adventure</h2>
-                
+                <div className={styles.card__grid}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
             </main>
         </>
     );

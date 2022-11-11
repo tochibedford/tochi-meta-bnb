@@ -18,9 +18,26 @@
 }
 
 .main__content {
-    margin-top: clamp(20px, 5vw, 58px);
     .inspiration__title {
-        font-size: clamp(24px, 5vw,48px);
+        margin-top: clamp(20px, 5vw, 58px);
+        margin-bottom: clamp(20px, 5vw, 58px);
+        font-size: clamp(24px, 5vw, 48px);
         text-align: center;
+        position: sticky;
+    }
+
+    .card__grid {
+        display: grid;
+        padding: 0 10rem;
+        gap: 2.4em;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main__content {
+        .card__grid {
+            padding: 0 1rem;
+        }
     }
 }
