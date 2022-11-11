@@ -1,3 +1,98 @@
-.main__content{
-    z-index: -1;
+@import './styles/colors.scss';
+
+.app {
+    .hero__container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 4.3rem 10em;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        .hero__left,
+        .hero__right {
+            flex: 1;
+            gap: 4.8em;
+            min-width: 500px;
+        }
+
+        .hero__left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-top: 10em;
+
+            .hero__title {
+                font-size: clamp(40px, 4vw, 56px);
+
+                .special__text {
+                    color: $primary-major;
+                    font-weight: 600;
+                }
+            }
+
+            .hero__paragraph {
+                font-size: 2.4em;
+            }
+        }
+
+        .hero__right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .hero__masonry {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                gap: 0.8em;
+
+                .masonry__image__container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    border-radius: 1.5em;
+                    img {
+                        object-fit: contain;
+                        width: 100%;
+                    }
+                }
+
+                .img1__container {
+                    grid-row: 2 / span 2;
+                }
+
+                .img2__container {
+                    grid-row: 4 / span 2;
+                }
+
+                .img3__container {
+                    grid-row: 1 / span 2;
+                }
+
+                .img4__container {
+                    grid-row: 3 / span 2;
+                }
+            }
+        }
+    }
+
+    .main__content {}
+}
+
+@media screen and (max-width: 600px) {
+    .app {
+        .hero__container {
+            padding: 4.3rem 2em;
+
+            .hero__left,
+            .hero__right {
+                min-width: 100%;
+            }
+        }
+    }
 }
