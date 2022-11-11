@@ -43,6 +43,7 @@
                 padding: 1.5rem 2.6rem;
                 width: max-content;
                 font-size: 1.6em;
+                font-family: 'Red Rose', cursive;
 
                 &:hover {
                     cursor: pointer;
@@ -61,6 +62,7 @@
         max-height: 90px;
         padding: 4.3rem 2rem;
         background-color: white;
+
         .brand__container {
             display: flex;
             justify-content: center;
@@ -160,8 +162,8 @@
                         align-items: center;
                         margin-bottom: none;
                         gap: 1.5em;
-                        
-                        
+
+
                         .main__nav__item {
                             display: flex;
                             justify-content: flex-start;
