@@ -1,5 +1,6 @@
 import styles from '../styles/Navbar.module.scss'
 import MetaBrand from '../assets/MetaBrand.svg'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const menuItems = [
@@ -41,15 +42,15 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={styles.mobile__menu}>
-                
+
                 <div className={styles.burger__menu}>
-                    <input type="checkbox"/>
+                    <input type="checkbox" />
                     <div className={styles.scalable__nav}>
                         <ul className={styles.main__nav}>
                             {menuItems.map((item, index) => {
                                 return (
                                     <li key={item.url + index} className={styles.main__nav__item}>
-                                        <a href={item.url}>{item.title}</a>
+                                        <Link href={item.url}>{item.title}</Link>
                                     </li>
                                 )
                             })}
