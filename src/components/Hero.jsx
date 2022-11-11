@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import img1 from '../assets/img1.png'
 import img2 from '../assets/img2.png'
 import img3 from '../assets/img3.png'
@@ -5,6 +6,8 @@ import img4 from '../assets/img4.png'
 import styles from '../styles/Hero.module.scss'
 
 const Hero = () => {
+    const [searchInput, setSearchInput] = useState('')
+    
     return (
         <div className={styles.hero__container}>
             <div className={styles.hero__left}>
@@ -13,7 +16,7 @@ const Hero = () => {
                 </div>
                 <p className={styles.hero__paragraph}>we provide you access to luxury and affordable houses in the metaverse, get a chance to turn your imagination to reality at your comfort zone</p>
                 <span className={styles.search__container}>
-                    <input type="text" placeholder='Search for location' className={styles.search__input} />
+                    <input onChange={(e)=>{setSearchInput(e.target.value)}} value={searchInput} type="text" placeholder='Search for location' className={styles.search__input} />
                     <button className={styles.search__button}>Search</button>
                 </span>
             </div>
