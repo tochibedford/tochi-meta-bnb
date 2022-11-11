@@ -6,4 +6,13 @@
     align-items: center;
     padding: 1em;
     background-color: $primary-major;
+
+    .partner__img__container {
+        width: clamp(40px, 25vw, 170px);
+        
+        img {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
 }
