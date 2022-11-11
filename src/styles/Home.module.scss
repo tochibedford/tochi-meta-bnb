@@ -9,10 +9,18 @@
 
     .partner__img__container {
         width: clamp(40px, 25vw, 170px);
-        
+
         img {
             object-fit: contain;
             width: 100%;
         }
+    }
+}
+
+.main__content {
+    margin-top: clamp(20px, 5vw, 58px);
+    .inspiration__title {
+        font-size: clamp(24px, 5vw,48px);
+        text-align: center;
     }
 }
