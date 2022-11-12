@@ -1,0 +1,41 @@
+@import './colors.scss';
+
+.footer {
+    background-color: #1D1D1E;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    padding: 4.3rem 10em;
+
+    .footer__left,
+    .footer__right {
+        outline: 1px solid white;
+    }
+
+    .footer__left {
+        height: 50vh;
+        flex: 0.3 0 200px;
+    }
+    
+    .footer__right {
+        height: 50vh;
+        flex: 1 0 200px;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .footer {
+        .footer__left {
+            flex: 1 0 100%;
+        }
+
+        .footer__right {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        padding: 3rem 1.5rem;
+    }
+}
