@@ -34,6 +34,9 @@ const Home = () => {
                     <Card />
                 </div>
             </main>
+            <section className={styles.learn__container}>
+                
+            </section>
         </>
     );
 }

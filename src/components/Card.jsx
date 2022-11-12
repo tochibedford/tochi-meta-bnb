@@ -1,7 +1,18 @@
 import styles from '../styles/Card.module.scss'
 import img1 from '../assets/cards/1.png'
+import star from '../assets/cards/star.svg'
 
 const Card = () => {
+    const rating = 5 // can switch this out for a ratings prop
+
+    const stars = []
+    for(let i = 0; i<rating; i++){
+        stars.push(
+            <div className={styles.star__image__container} key={`star__${i}`}>
+                <img className={styles.star__image} src={star} alt="star image" />
+            </div>
+        )
+    }
     return ( 
         <div className={styles.card__container}>
             <div className={styles.card__image__container}>
@@ -16,6 +27,9 @@ const Card = () => {
                     <div className={styles.distance}>2345</div>
                     <div className={styles.availability}>2 weeks</div>
                 </div>
+                <span className={styles.rating}>
+                    {stars}
+                </span>
             </div>
         </div>
     );
