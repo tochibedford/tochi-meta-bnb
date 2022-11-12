@@ -22,6 +22,7 @@ const Navbar = () => {
         },
 
     ]
+
     return (
         <nav className={styles.navbar}>
             <div className={styles.brand__container}>
