@@ -28,16 +28,21 @@
 
     .card__grid {
         display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));;
         padding: 0 10rem;
         gap: 2.4em;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        // background: red;
+        // justify-content: flex-start;
+        // max-width: 1500px;
+        // margin-left: auto;
+        // margin-right: auto;
     }
 }
 
 @media screen and (max-width: 600px) {
     .main__content {
         .card__grid {
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
     }
 }
