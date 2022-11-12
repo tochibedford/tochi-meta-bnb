@@ -18,6 +18,8 @@
 }
 
 .main__content {
+    margin-bottom: 3em;
+
     .inspiration__title {
         margin-top: clamp(20px, 5vw, 58px);
         margin-bottom: clamp(20px, 5vw, 58px);
@@ -33,21 +35,99 @@
     }
 }
 
+.learn__container {
+    background-color: $primary-major;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+    padding: 4.3rem 10rem;
+
+    .learn__left {
+        font-size: 1.8em;
+        min-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .section__title {
+            font-size: clamp(2.5em, 12vw,4em);
+            font-weight: 600;
+            margin-bottom: 3.5rem;
+        }
+
+        .section__paragraph {
+            font-size: 1.3em;
+            line-height: 3.5rem;
+            margin-bottom: 3.5rem;
+            max-width: 650px;
+        }
+
+        .learn__button__container {
+            button {
+                border: none;
+                background-color: white;
+                color: $primary-major;
+                border-radius: 1rem;
+                padding: 1.5rem 2.6rem;
+                width: max-content;
+                font-size: 1.6rem;
+                font-family: 'Red Rose', cursive;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .learn__right {
+        min-width: 400px;
+
+        .learn__image__container {
+            padding: 7em;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .learn__container {
+        padding: 4.3rem 1rem;
+
+        .learn__left {
+            min-width: 100%;
+            text-align: center;
+            margin-bottom: 2em;
+
+            .section__paragraph {
+                max-width: 100%;
+            }
+
+        }
+
+        .learn__right {
+            min-width: 100%;
+            .learn__image__container {
+                padding: 1rem;
+                
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 960px) {
-    .main__content{
+    .main__content {
         .card__grid {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
     }
 }
-
-// @media screen and (max-width: 860) {
-//     .main__content{
-//         .card__grid {
-//             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//         }
-//     }
-// }
 
 @media screen and (max-width: 600px) {
     .main__content {
