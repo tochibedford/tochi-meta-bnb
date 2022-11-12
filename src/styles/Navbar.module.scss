@@ -11,10 +11,11 @@
 
     .brand__container {
         width: clamp(20px, 50vw, 300px);
+
         img {
             object-fit: contain;
             width: 100%;
-            
+
         }
     }
 
@@ -176,10 +177,28 @@
 
                         .main__nav__item {
                             display: flex;
-                            justify-content: flex-start;
+                            justify-content: center;
                             align-items: center;
                             text-align: center;
                             height: 10%;
+                            width: 100%;
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -5px;
+                                left: 50%;
+                                transform: translate(-50%);
+                                width: 0%;
+                                height: 1px;
+                                background-color: rgb(179, 179, 179);
+                                transition: width 0.3s ease;
+                            }
+
+                            &:hover::after {
+                                width: 50%;
+                            }
                         }
                     }
                 }
