@@ -6,14 +6,13 @@ $border-stroke-color: #CFD8DC;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200%;
     background-color: #4040405b;
 
     .modal {
         position: absolute;
-        top: 25%;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -25%);
+        transform: translate(-50%, -50%);
         background-color: white;
         font-size: 1.6rem;
         border-radius: 1.6rem;
@@ -53,19 +52,19 @@ $border-stroke-color: #CFD8DC;
                 gap: 1rem;
                 border: 1px solid $border-stroke-color;
                 padding: 1.2rem 2rem;
-                width: clamp(300px, 30vw,600px);
+                width: clamp(300px, 30vw, 600px);
                 cursor: pointer;
 
-                
+
                 .wallet__image__container {
                     width: 4rem;
-                    
+
                     img {
                         object-fit: cotain;
                         width: 100%;
                     }
                 }
-                
+
                 .wallet__name {
                     display: flex;
                     align-items: center;
@@ -78,17 +77,24 @@ $border-stroke-color: #CFD8DC;
                     width: 1rem;
                     display: grid;
                     place-items: center;
-                    
+
                     img {
                         object-fit: cotain;
                         width: 100%;
                     }
                 }
             }
-            
+
             .active {
                 background-color: #F8F9FA;
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .modal__container .modal .modal__bottom .wallet {
+        width: 68vw;
     }
 }
