@@ -48,9 +48,9 @@ const Navbar = () => {
 
     return (
         <nav className={styles.navbar}>
-            <div className={styles.brand__container}>
+            <Link to="/" className={styles.brand__container}>
                 <img src={MetaBrand} className={styles.brand} alt="brand logo" />
-            </div>
+            </Link>
             <div className={styles.scalable__nav}>
                 <ul className={styles.main__nav}>
                     {menuItems.map((item, index) => {
@@ -73,7 +73,7 @@ const Navbar = () => {
                             {menuItems.map((item, index) => {
                                 return (
                                     <li key={item.url + index} className={styles.main__nav__item}>
-                                        <Link href={item.url}>{item.title}</Link>
+                                        <Link to={item.url}>{item.title}</Link>
                                     </li>
                                 )
                             })}
