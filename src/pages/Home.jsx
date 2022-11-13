@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss'
 import partner1 from '../assets/partner_mbtoken.svg'
 import partner2 from '../assets/partner_metamask.svg'
 import partner3 from '../assets/partner_opensea.svg'
-import learnImage from '../assets/learnMorePhoto.png'
+import learnImage from '../assets/LearnMorePhoto.png'
 import Card from "../components/Card";
 
 const Home = () => {
