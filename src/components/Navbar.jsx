@@ -1,15 +1,30 @@
 import styles from '../styles/Navbar.module.scss'
 import MetaBrand from '../assets/MetaBrand.svg'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Connect from '../pages/Connect'
 import { useStopScroll } from '../custom-hooks'
 
 const Navbar = () => {
     const [isConnectWalletOpen, setIsConnectWalletOpen] = useState(false);
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-    
-    useStopScroll([isBurgerOpen])
+    const burgerInputRef = useRef(null)
+
+    useStopScroll([isBurgerOpen, isConnectWalletOpen])
+    const handleResize = () => {
+        if (window.innerWidth >= 1200 && burgerInputRef.current.checked) {
+            burgerInputRef.current.checked = false
+            setIsBurgerOpen(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
     const menuItems = [
         {
@@ -47,12 +62,12 @@ const Navbar = () => {
                     })}
                 </ul>
                 <div className={styles.wallet__button__container}>
-                    <button className={styles.wallet__button} onClick={()=>setIsConnectWalletOpen(true)}>Connect Wallet</button>
+                    <button className={styles.wallet__button} onClick={() => setIsConnectWalletOpen(true)}>Connect Wallet</button>
                 </div>
             </div>
             <div className={styles.mobile__menu}>
                 <div className={styles.burger__menu}>
-                    <input type="checkbox" value={isBurgerOpen} onChange={(e)=>setIsBurgerOpen(e.target.checked)}/>
+                    <input ref={burgerInputRef} type="checkbox" value={isBurgerOpen} onChange={(e) => setIsBurgerOpen(e.target.checked)} />
                     <div className={styles.scalable__nav}>
                         <ul className={styles.main__nav}>
                             {menuItems.map((item, index) => {
@@ -64,7 +79,7 @@ const Navbar = () => {
                             })}
                         </ul>
                         <div className={styles.wallet__button__container}>
-                            <button className={styles.wallet__button} onClick={()=>setIsConnectWalletOpen(true)}>Connect Wallet</button>
+                            <button className={styles.wallet__button} onClick={() => setIsConnectWalletOpen(true)}>Connect Wallet</button>
                         </div>
                     </div>
                     <span className={styles.line1}></span>
@@ -72,7 +87,7 @@ const Navbar = () => {
                     <span className={styles.line3}></span>
                 </div>
             </div>
-            {isConnectWalletOpen && <Connect setIsConnectWalletOpen={setIsConnectWalletOpen} /> }
+            {isConnectWalletOpen && <Connect setIsConnectWalletOpen={setIsConnectWalletOpen} />}
         </nav>
     );
 }

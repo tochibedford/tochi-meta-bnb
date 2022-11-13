@@ -11,13 +11,15 @@ export const useStopScroll = (optionalBooleanWatch = []) => {
         const handleWindowScroll = () => {
             document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
         }
+
         window.addEventListener('scroll', handleWindowScroll);
+
         return () => {
-            if (optionalBooleanWatch.every((el) => el === false) === false){
+            if (optionalBooleanWatch.every((el) => el === false) === false) {
 
                 document.body.style.overflowY = ""
                 document.body.style.position = ""
-                window.scrollTo({left: 0, top:parseInt(scrollY || '0'), behavior: "smooth"});
+                window.scrollTo({ left: 0, top: parseInt(scrollY || '0'), behavior: "smooth" });
                 window.removeEventListener('scroll', handleWindowScroll)
             }
         }
