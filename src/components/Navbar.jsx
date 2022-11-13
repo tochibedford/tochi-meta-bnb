@@ -1,8 +1,12 @@
 import styles from '../styles/Navbar.module.scss'
 import MetaBrand from '../assets/MetaBrand.svg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import Connect from '../pages/Connect'
 
 const Navbar = () => {
+    const [isConnectWalletOpen, setIsConnectWalletOpen] = useState(false);
+
     const menuItems = [
         {
             title: 'Home',
@@ -39,7 +43,7 @@ const Navbar = () => {
                     })}
                 </ul>
                 <div className={styles.wallet__button__container}>
-                    <button className={styles.wallet__button}>Connect Wallet</button>
+                    <button className={styles.wallet__button} onClick={()=>setIsConnectWalletOpen(true)}>Connect Wallet</button>
                 </div>
             </div>
             <div className={styles.mobile__menu}>
@@ -57,7 +61,7 @@ const Navbar = () => {
                             })}
                         </ul>
                         <div className={styles.wallet__button__container}>
-                            <button className={styles.wallet__button}>Connect Wallet</button>
+                            <button className={styles.wallet__button} onClick={()=>setIsConnectWalletOpen(true)}>Connect Wallet</button>
                         </div>
                     </div>
                     <span className={styles.line1}></span>
@@ -65,6 +69,7 @@ const Navbar = () => {
                     <span className={styles.line3}></span>
                 </div>
             </div>
+            {isConnectWalletOpen && <Connect setIsConnectWalletOpen={setIsConnectWalletOpen} /> }
         </nav>
     );
 }
