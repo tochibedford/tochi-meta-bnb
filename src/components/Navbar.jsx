@@ -1,11 +1,15 @@
 import styles from '../styles/Navbar.module.scss'
 import MetaBrand from '../assets/MetaBrand.svg'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Connect from '../pages/Connect'
+import { useStopScroll } from '../custom-hooks'
 
 const Navbar = () => {
     const [isConnectWalletOpen, setIsConnectWalletOpen] = useState(false);
+    const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+    
+    useStopScroll([isBurgerOpen])
 
     const menuItems = [
         {
@@ -47,9 +51,8 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={styles.mobile__menu}>
-
                 <div className={styles.burger__menu}>
-                    <input type="checkbox" />
+                    <input type="checkbox" value={isBurgerOpen} onChange={(e)=>setIsBurgerOpen(e.target.checked)}/>
                     <div className={styles.scalable__nav}>
                         <ul className={styles.main__nav}>
                             {menuItems.map((item, index) => {
