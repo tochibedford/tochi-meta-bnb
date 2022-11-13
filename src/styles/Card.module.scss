@@ -16,11 +16,20 @@
         align-items: center;
         width: 100%;
         min-height: 265px;
+        position: relative;
 
-        img {
+        .card__image {
             border-radius: 1.5em;
             object-fit: contain;
             width: 110%;
+        }
+
+        .card__heart {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2em;
+            height: 2em;
         }
     }
 
@@ -61,12 +70,10 @@
 
                 &::before {
                     content: 'available for ';
-                    // font-size: clamp(12px, 5vw,15px);
                 }
 
                 &::after {
                     content: ' stay';
-                    // font-size: clamp(12px, 5vw,15px);
                 }
             }
         }
