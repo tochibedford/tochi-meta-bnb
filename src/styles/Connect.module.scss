@@ -1,15 +1,94 @@
+$border-stroke-color: #CFD8DC;
+
 .modal__container {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    height: 200%;
     background-color: #4040405b;
-    display: grid;
-    place-items: center;
 
     .modal {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -25%);
         background-color: white;
-        padding: 10em;
+        font-size: 1.6rem;
+        border-radius: 1.6rem;
+
+        .modal__top {
+            display: flex;
+            padding: 3.2rem;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $border-stroke-color;
+
+            .title {
+                font-size: 2.4rem;
+                font-weight: 800;
+            }
+
+            .close {
+                cursor: pointer;
+            }
+        }
+
+        .modal__bottom {
+            padding: 3.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            .prompt {
+                font-size: 1.6rem;
+            }
+
+            .wallet {
+                padding: 1.2rem;
+                background-color: white;
+                border-radius: 1em;
+                display: flex;
+                gap: 1rem;
+                border: 1px solid $border-stroke-color;
+                padding: 1.2rem 2rem;
+                width: clamp(300px, 30vw,600px);
+                cursor: pointer;
+
+                
+                .wallet__image__container {
+                    width: 4rem;
+                    
+                    img {
+                        object-fit: cotain;
+                        width: 100%;
+                    }
+                }
+                
+                .wallet__name {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.8rem;
+                    font-weight: 800;
+                    margin-right: auto;
+                }
+
+                .wallet__chevron__container {
+                    width: 1rem;
+                    display: grid;
+                    place-items: center;
+                    
+                    img {
+                        object-fit: cotain;
+                        width: 100%;
+                    }
+                }
+            }
+            
+            .active {
+                background-color: #F8F9FA;
+            }
+        }
     }
 }

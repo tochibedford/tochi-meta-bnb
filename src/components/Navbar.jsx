@@ -1,7 +1,7 @@
 import styles from '../styles/Navbar.module.scss'
 import MetaBrand from '../assets/MetaBrand.svg'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Connect from '../pages/Connect'
 import { useStopScroll } from '../custom-hooks'
 

@@ -167,7 +167,7 @@
                     background-color: white;
                     border-bottom: 0px solid grey;
                     overflow: hidden;
-                    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+                    transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
 
                     .main__nav {
                         display: flex;
@@ -175,7 +175,6 @@
                         justify-content: flex-start;
                         height: max-content;
                         align-items: center;
-                        margin-bottom: none;
                         gap: 1.5em;
 
 
@@ -204,6 +203,25 @@
                                 width: 10%;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .navbar {
+        .mobile__menu {
+            .burger__menu {
+                .scalable__nav {
+                    .main__nav {
+                        gap: 0.6em;
+                    }
+
+                    .wallet__button__container{
+                        margin-top: -3.5em;
+
                     }
                 }
             }
