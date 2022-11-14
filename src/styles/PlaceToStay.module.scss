@@ -1,0 +1,28 @@
+@import './colors.scss';
+
+.main__content {
+    margin-bottom: 3em;
+
+    .card__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        padding: 0 10rem;
+        gap: 2.4em;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .main__content {
+        .card__grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main__content {
+        .card__grid {
+            padding: 0 1.5rem;
+        }
+    }
+}

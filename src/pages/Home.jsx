@@ -26,13 +26,6 @@ const Home = () => {
                 <h2 className={styles.inspiration__title}>Inspiration for your next adventure</h2>
                 <div className={styles.card__grid}>
                     <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
                 </div>
             </main>
             <section className={styles.learn__container}>
