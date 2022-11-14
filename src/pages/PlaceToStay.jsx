@@ -13,8 +13,7 @@ const PlaceToStay = () => {
     const locations = ["Restaurant", "Cottage", "Castle", "Fantast City", "Beach", "Cabins", " Off-grid", "Farm"]
     return (
         <main className={styles.main__content}>
-            <Filter options={locations} /> 
-            {/**TODO include props that determine what options the filter has */}
+            <Filter options={locations} />
             <div className={styles.card__grid}>
                 {cards}
             </div>
