@@ -6,19 +6,21 @@
     display: grid;
     place-items: center;
     cursor: pointer;
-
+    width: 100%;
+    
     .card__image__container {
         border-radius: 1.5em;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
         position: relative;
-
+        overflow: hidden;
+        
         .card__image {
+            aspect-ratio: calc(260/265);
             border-radius: 1.5em;
-            object-fit: contain;
+            object-fit: cover;
             width: 100%;
         }
 

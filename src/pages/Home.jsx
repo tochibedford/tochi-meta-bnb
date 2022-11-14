@@ -7,11 +7,30 @@ import partner3 from '../assets/partner_opensea.svg'
 import learnImage from '../assets/LearnMorePhoto.png'
 import Card from "../components/Card";
 
+import image1 from "../assets/Home/1.webp"
+import image2 from "../assets/Home/2.webp"
+import image3 from "../assets/Home/3.webp"
+import image4 from "../assets/Home/4.webp"
+import image5 from "../assets/Home/5.webp"
+import image6 from "../assets/Home/6.webp"
+import image7 from "../assets/Home/7.webp"
+import image8 from "../assets/Home/8.webp"
+
 const Home = () => {
+    const images = [
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
+        image6,
+        image7,
+        image8,
+    ]
     const cards = []
-    for(let i = 0; i<8; i++){
+    for (let i = 0; i < 8; i++) {
         cards.push(
-            <Card key={"card__" + i}/>
+            <Card key={"card__" + i} image={images[i]} />
         )
     }
     return (
