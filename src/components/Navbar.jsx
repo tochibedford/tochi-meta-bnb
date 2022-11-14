@@ -3,18 +3,19 @@ import MetaBrand from '../assets/MetaBrand.svg'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import Connect from '../pages/Connect'
-import { useStopScroll } from '../custom-hooks'
 
 const Navbar = () => {
     const [isConnectWalletOpen, setIsConnectWalletOpen] = useState(false);
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
     const burgerInputRef = useRef(null)
-
-    useStopScroll([isBurgerOpen, isConnectWalletOpen])
+    const closeBurger = () => {
+        burgerInputRef.current.checked = false
+        setIsBurgerOpen(false)
+    }
+    
     const handleResize = () => {
         if (window.innerWidth >= 1200 && burgerInputRef.current.checked) {
-            burgerInputRef.current.checked = false
-            setIsBurgerOpen(false)
+            closeBurger()
         }
     }
 
@@ -73,7 +74,7 @@ const Navbar = () => {
                             {menuItems.map((item, index) => {
                                 return (
                                     <li key={item.url + index} className={styles.main__nav__item}>
-                                        <Link to={item.url}>{item.title}</Link>
+                                        <Link to={item.url} onClick={closeBurger}>{item.title}</Link>
                                     </li>
                                 )
                             })}

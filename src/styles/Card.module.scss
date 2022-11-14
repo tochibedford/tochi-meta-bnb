@@ -95,6 +95,12 @@
     }
 }
 
+@media screen and (max-width: 850px) {
+    .card__container {
+        max-width: none;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .card__container {
         .card__info {

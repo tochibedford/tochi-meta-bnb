@@ -8,6 +8,12 @@ import learnImage from '../assets/LearnMorePhoto.png'
 import Card from "../components/Card";
 
 const Home = () => {
+    const cards = []
+    for(let i = 0; i<8; i++){
+        cards.push(
+            <Card key={i}/>
+        )
+    }
     return (
         <>
             <Hero />

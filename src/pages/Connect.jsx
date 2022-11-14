@@ -1,14 +1,11 @@
 import ReactDOM from 'react-dom'
 import styles from '../styles/Connect.module.scss'
-import { useStopScroll } from '../custom-hooks'
 import closeIcon from '../assets/Wallet/close.svg'
 import chevronIcon from '../assets/Wallet/chevron.svg'
 import metamaskFoxIcon from '../assets/Wallet/metamaskFox.png'
 import otherWalletIcon from '../assets/Wallet/otherWallet.png'
-import { useEffect, useRef } from 'react'
 
 const Connect = ({ setIsConnectWalletOpen }) => {
-    useStopScroll()
     return ReactDOM.createPortal(
         <div className={styles.modal__container} onClick={() => setIsConnectWalletOpen(false)}>
             <div className={styles.modal} onClick={(e)=>e.stopPropagation()}>
