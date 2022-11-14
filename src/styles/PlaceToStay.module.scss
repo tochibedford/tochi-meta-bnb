@@ -5,16 +5,33 @@
 
     .card__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
         padding: 0 10rem;
-        gap: 2.4em;
+        gap: 2.4rem;
+        justify-items: center;
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
+    .main__content {
+        .card__grid{
+            padding: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
     .main__content {
         .card__grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main__content {
+        .card__grid {
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
         }
     }
 }

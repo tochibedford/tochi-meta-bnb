@@ -31,7 +31,7 @@ const Home = () => {
             <main className={styles.main__content}>
                 <h2 className={styles.inspiration__title}>Inspiration for your next adventure</h2>
                 <div className={styles.card__grid}>
-                    <Card />
+                    {cards}
                 </div>
             </main>
             <section className={styles.learn__container}>

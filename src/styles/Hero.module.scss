@@ -121,6 +121,12 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .hero__container {
+        padding: 2rem;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .hero__container {
         padding: 4.3rem 2em;

@@ -1,13 +1,11 @@
 .card__container {
     border: 1px solid #D7D7D7;
     background: white;
-    padding: 1.6em;
+    padding: clamp(1rem, 0.5vw, 1.6rem);
     border-radius: 1.5em;
     display: grid;
     place-items: center;
-    max-width: 370px;
     cursor: pointer;
-
 
     .card__image__container {
         border-radius: 1.5em;
@@ -15,14 +13,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        min-height: 265px;
+        height: 100%;
         position: relative;
 
         .card__image {
             border-radius: 1.5em;
             object-fit: contain;
-            width: 110%;
+            width: 100%;
         }
 
         .card__heart {
@@ -42,7 +39,7 @@
         width: 100%;
 
         .top__section {
-            font-size: 1.6em;
+            font-size: clamp(1rem, 1vw, 1.6rem);
             display: flex;
             justify-content: space-between;
 
@@ -56,7 +53,7 @@
         }
 
         .bottom__section {
-            font-size: clamp(12px, 1.6vw, 16px);
+            font-size: clamp(1rem, 1vw, 1.3rem);
             display: flex;
             justify-content: space-between;
 
@@ -86,6 +83,7 @@
 
             .star__image__container {
                 min-width: 15px;
+
                 .star__image {
                     object-fit: contain;
                     width: 100%;
@@ -95,17 +93,51 @@
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 768px) {
     .card__container {
-        max-width: none;
+        .card__info {
+            .top__section {
+                font-size: 1.5rem;
+            }
+
+            .bottom__section {
+                font-size: clamp(1.1rem, 1vw, 1.3rem);
+            }
+        }
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
     .card__container {
         .card__info {
+            .top__section {
+                font-size: 1.3rem;
+            }
+
             .bottom__section {
-                font-size: 1.5em;
+                font-size: clamp(1rem, 1vw, 1.3rem);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .card__container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card__container {
+        max-width: 100%;
+
+        .card__info {
+            .top__section {
+                font-size: 1.6rem;
+            }
+
+            .bottom__section {
+                font-size: 1.5rem;
             }
         }
     }
