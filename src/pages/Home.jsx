@@ -11,7 +11,7 @@ const Home = () => {
     const cards = []
     for(let i = 0; i<8; i++){
         cards.push(
-            <Card key={i}/>
+            <Card key={"card__" + i}/>
         )
     }
     return (
