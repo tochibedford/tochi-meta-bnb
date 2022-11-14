@@ -9,7 +9,10 @@ const Filter = ({ options }) => {
     useEffect(()=>{
         const handleClick = (e)=>{
             if(e.target === dropDownToggleRef.current) return
-            
+            if(e.target.closest(styles.dropdown)) {
+                dropDownToggleRef.current.checked = !dropDownToggleRef.current.checked
+            }
+
             dropDownToggleRef.current.checked = false
         }
 
