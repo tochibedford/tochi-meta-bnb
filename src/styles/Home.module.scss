@@ -48,7 +48,7 @@
 
     .learn__left {
         font-size: 1.8em;
-        min-width: 400px;
+        flex: 1 0 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -85,10 +85,17 @@
     }
 
     .learn__right {
-        min-width: 400px;
+        flex: 1 0.5 350px;
 
         .learn__image__container {
             padding: 7em;
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+            }
         }
     }
 }
